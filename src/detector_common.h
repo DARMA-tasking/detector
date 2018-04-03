@@ -6,8 +6,6 @@
 
 namespace detection {
 
-bool has_detection();
-
 }  // end detection
 
 #endif /*INCLUDED_DETECTOR_LIB_COMMON*/
