@@ -3,7 +3,7 @@ project(detection)
 
 set(CMAKE_CXX_STANDARD 14)
 
-enable_language(CXX ASM)
+enable_language(CXX)
 
 include (CTest)
 enable_testing()
@@ -18,7 +18,8 @@ file(
   ${PROJECT_SOURCE_DIR}/*.h
 )
 
-install(TARGETS ${DETECTION_LIBRARY} DESTINATION lib)
+set(DETECTION_LIBRARY detection)
+
 install(FILES ${HEADER_FILES} DESTINATION include)
 
 include_directories(${PROJECT_SOURCE_DIR})
@@ -62,8 +63,23 @@ foreach(EXAMPLE_FULL ${PROJECT_EXAMPLES})
     ${CMAKE_CURRENT_BINARY_DIR}/${EXAMPLE}
   )
 
-  target_link_libraries(
-    ${EXAMPLE}
-    ${DETECTION_LIBRARY}
-  )
 endforeach()
+
+add_library(darma_detector INTERFACE)
+target_include_directories(darma_detector INTERFACE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+  $<INSTALL_INTERFACE:include>
+)
+install(TARGETS darma_detector EXPORT darma_detector)
+install(EXPORT darma_detector DESTINATION cmake)
+
+configure_file(
+  cmake/darma_detectorConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/darma_detectorConfig.cmake" @ONLY
+)
+install(
+  FILES
+  "${PROJECT_BINARY_DIR}/darma_detectorConfig.cmake" 
+  DESTINATION cmake 
+)
+
