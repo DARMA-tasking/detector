@@ -18,20 +18,6 @@ file(
   ${PROJECT_SOURCE_DIR}/*.h
 )
 
-file(
-  GLOB
-  SOURCE_FILES
-  ${PROJECT_SOURCE_DIR}/*.cc
-)
-
-set(DETECTION_LIBRARY detection)
-
-add_library(
-  ${DETECTION_LIBRARY}
-  STATIC
-  ${HEADER_FILES} ${SOURCE_FILES}
-)
-
 install(TARGETS ${DETECTION_LIBRARY} DESTINATION lib)
 install(FILES ${HEADER_FILES} DESTINATION include)
 
