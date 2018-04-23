@@ -80,6 +80,5 @@ configure_file(
 install(
   FILES
   "${PROJECT_BINARY_DIR}/darma_detectorConfig.cmake" 
-  DESTINATION cmake 
+  DESTINATION cmake
 )
-
