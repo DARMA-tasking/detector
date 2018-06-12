@@ -10,8 +10,8 @@ else
     build_mode=debug
 fi
 
-if test $# -gt 1; then; compiler_c=$2; fi
-if test $# -gt 2; then; compiler_cxx=$3; fi
+if test $# -gt 1; then compiler_c=$2; fi
+if test $# -gt 2; then compiler_cxx=$3; fi
 
 cmake ../detector                                  \
       -DCMAKE_BUILD_TYPE=${build_mode}             \
