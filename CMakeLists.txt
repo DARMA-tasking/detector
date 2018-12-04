@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.8)
 project(detection)
 
+# Try to find ccache to speed up compilation
+find_program(ccache_binary ccache)
+if (ccache_binary)
+  set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${ccache_binary}")
+endif()
+
 file(
   GLOB
   HEADER_FILES
