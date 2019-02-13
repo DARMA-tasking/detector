@@ -24,13 +24,13 @@ install(FILES ${HEADER_FILES} DESTINATION include)
 add_library(${DETECTION_LIBRARY} INTERFACE)
 add_library(${DETECTION_LIBRARY_NS} ALIAS ${DETECTION_LIBRARY})
 
-target_compile_features(${DETECTION_LIBRARY} INTERFACE cxx_std_14)
-target_compile_features(
-  ${DETECTION_LIBRARY} INTERFACE
-  cxx_variadic_templates
-  cxx_auto_type
-  cxx_constexpr
-)
+#target_compile_features(${DETECTION_LIBRARY} INTERFACE cxx_std_14)
+#target_compile_features(
+#  ${DETECTION_LIBRARY} INTERFACE
+#  cxx_variadic_templates
+#  cxx_auto_type
+#  cxx_constexpr
+#)
 
 target_include_directories(
   ${DETECTION_LIBRARY} INTERFACE
