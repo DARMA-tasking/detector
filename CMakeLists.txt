@@ -14,7 +14,7 @@ file(
 )
 
 set(DETECTION_LIBRARY detector)
-set(DETECTION_LIBRARY_NS ::vt::lib::detector)
+set(DETECTION_LIBRARY_NS vt::lib::detector)
 
 add_custom_target(detector_examples)
 add_subdirectory(examples)
