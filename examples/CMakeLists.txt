@@ -35,7 +35,7 @@ foreach(EXAMPLE_FULL ${PROJECT_EXAMPLES})
   target_link_libraries(${EXAMPLE} ${DETECTION_LIBRARY})
 
   add_test_for_example(
-    ${EXAMPLE}
+    detector:${EXAMPLE}
     ${CMAKE_CURRENT_BINARY_DIR}/${EXAMPLE}
   )
 endforeach()
