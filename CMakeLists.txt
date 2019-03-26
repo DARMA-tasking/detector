@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.8)
 project(detection)
 
+include(cmake/turn_on_warnings.cmake)
+
 # Try to find ccache to speed up compilation
 find_program(ccache_binary ccache)
 if (ccache_binary)
