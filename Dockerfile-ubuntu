@@ -1,0 +1,31 @@
+FROM ubuntu:18.04
+MAINTAINER Jonathan Lifflander <jliffla@sandia.gov>
+
+RUN apt-get update && apt-get install -y \
+  cmake \
+  git \
+  gcc-5 \
+  g++-5
+
+COPY . /usr/src/detector
+
+WORKDIR /usr/src
+
+ARG LB_ENABLED
+ARG TRACE_ENABLED
+
+RUN \
+ export CC=gcc-5 && \
+ export CXX=g++-5 && \
+ export DETECTOR=$PWD/detector && \
+ export DETECTOR_BUILD=/usr/build/detector && \
+ mkdir -p $DETECTOR_BUILD && \
+ echo $SOURCE_COMMIT && \
+ cd $DETECTOR_BUILD && \
+ mkdir build && \
+ cd build && \
+ cmake -DCMAKE_INSTALL_PREFIX=$DETECTOR_BUILD/install -DCMAKE_CXX_COMPILER=$CXX -DCMAKE_C_COMPILER=$CC  $DETECTOR && \
+ make && \
+ make install
+
+COPY $DETECTOR_BUILD/ $DETECTOR_BUILD
