@@ -21,7 +21,7 @@ jobs:
         uses: jerray/publish-docker-action@master
         with:
             # Name of the Docker image
-            repository: lifflander1/vt
+            repository: lifflander1/detector
             # Target Docker registry
             registry: docker.io
             auto_tag: true
