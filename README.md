@@ -1,5 +1,8 @@
 # *detector* => DARMA/detector
 
+![Build Status](https://travis-ci.com/DARMA-tasking/detector.svg?branch=master)
+![](https://github.com/DARMA-tasking/detector/workflows/Docker%20Image%20CI/badge.svg)
+
 ## Introduction : What is *detector*?
 
 *detector* is a small library that implements static/compile-time type
