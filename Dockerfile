@@ -1,5 +1,4 @@
 FROM lifflander1/vt:alpine-final
-MAINTAINER Jonathan Lifflander <jliffla@sandia.gov>
 
 COPY . /usr/src/detector
 
