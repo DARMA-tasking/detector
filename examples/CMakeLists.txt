@@ -32,7 +32,7 @@ foreach(EXAMPLE_FULL ${PROJECT_EXAMPLES})
 
   add_dependencies(detector_examples ${EXAMPLE})
 
-  target_link_libraries(${EXAMPLE} ${DETECTION_LIBRARY})
+  target_link_libraries(${EXAMPLE} ${DETECTOR_LIBRARY})
 
   add_test_for_example(
     detector:${EXAMPLE}
