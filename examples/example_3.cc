@@ -43,6 +43,7 @@
 */
 
 #include "detector.h"
+#include <cstdint>
 #include <cstdlib>
 
 namespace test {
