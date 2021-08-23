@@ -4,4 +4,4 @@ get_filename_component(SELF_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 # Include the targets
 include(${SELF_DIR}/detectorTargets.cmake)
 
-
+set (DETECTOR_INCLUDE_DIRS "@CMAKE_INSTALL_PREFIX@/include")
